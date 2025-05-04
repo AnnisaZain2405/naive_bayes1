@@ -1,3 +1,62 @@
+# 🎯 Klasifikasi Emosi dari Teks Menggunakan Naive Bayes
+
+Proyek ini merupakan eksperimen sederhana untuk mengklasifikasikan emosi dari teks berbahasa Inggris menggunakan algoritma Machine Learning Naive Bayes, dengan hasil akhir ditampilkan dalam Bahasa Indonesia lengkap dengan ikon emoji. Eksperimen dilakukan menggunakan Google Colab dengan dataset terbuka dari Hugging Face.
+
+---
+
+## 📚 Deskripsi Singkat
+
+Emosi merupakan bagian penting dalam komunikasi manusia. Dengan kemampuan mengklasifikasikan emosi dari teks, sistem AI dapat memahami konteks emosional dari pengguna, yang sangat berguna dalam chatbot, analisis sentimen, maupun aplikasi kesehatan mental.
+
+Eksperimen ini menggunakan pendekatan klasik dengan:
+- **Preprocessing teks** (tokenisasi, stopwords removal, normalisasi)
+- **Ekstraksi fitur** menggunakan TF-IDF
+- **Klasifikasi** menggunakan **Multinomial Naive Bayes**
+
+---
+
+## 🧪 Dataset
+
+Dataset yang digunakan berasal dari:
+- 📦 `dair-ai/emotion` dari Hugging Face Datasets
+- Jumlah kelas emosi: 6
+  - 😢 **Kesedihan** (`sadness`)
+  - 😊 **Kebahagiaan** (`joy`)
+  - ❤️ **Cinta** (`love`)
+  - 😠 **Marah** (`anger`)
+  - 😨 **Takut** (`fear`)
+  - 😮 **Terkejut** (`surprise`)
+
+---
+
+## 🧠 Algoritma yang Digunakan
+
+### Naive Bayes (MultinomialNB)
+- Merupakan model probabilistik sederhana namun efektif.
+- Cocok untuk data teks yang telah dikonversi menjadi fitur frekuensi atau TF-IDF.
+- Asumsi independensi antar fitur.
+
+---
+
+## 🔧 Langkah-langkah Eksperimen
+
+1. **Load Dataset** dari Hugging Face
+2. **Preprocessing** teks (lowercasing, hapus stopwords, karakter khusus)
+3. **Transformasi fitur** menggunakan `TfidfVectorizer`
+4. **Split data** menjadi data latih dan uji
+5. **Training model** Multinomial Naive Bayes
+6. **Evaluasi model** menggunakan Confusion Matrix, Akurasi, dan Classification Report
+7. **Prediksi interaktif** dari input teks pengguna
+
+---
+
+## 📈 Hasil
+
+- Akurasi model: ~85% (tergantung eksperimen)
+- Confusion Matrix menunjukkan performa tinggi pada kelas joy dan sadness
+- Dapat memprediksi emosi kalimat seperti:
+  Kalimat: "Aku merasa dicintai dan dihargai"
+  Hasil: Cinta ❤️
 
 ---
 
